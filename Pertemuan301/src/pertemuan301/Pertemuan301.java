@@ -1,0 +1,51 @@
+package pertemuan301;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Gabriel
+ * Selasa, 19 Maret 2025
+ */
+public class Pertemuan301 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String nama = "";
+        String kelas = "";
+        String absen = "";
+        int nilai = 0;
+        
+        BufferedReader dtIN = new BufferedReader(new InputStreamReader(System.in));
+        
+        try{
+            System.out.print("Input Nama: ");
+            nama = dtIN.readLine();
+            
+            System.out.print("Input Kelas: ");
+            kelas = dtIN.readLine();
+            
+            System.out.print("Input Nilai: ");
+            nilai = Integer.parseInt(dtIN.readLine());
+            
+        }catch(IOException err){
+            System.out.println("Error");
+        }
+        
+        String ket = "Tidak Lulus";
+        
+        if (nilai>60){
+            absen = JOptionPane.showInputDialog("Input No. Absen: ");
+            ket = "Lulus";
+        }
+        
+        System.out.printf("Nama Siswa %s dari kelas %s dengan nilai %d dinyatakan %s",nama, kelas, nilai,ket);
+        
+    }
+    
+}
